@@ -21,34 +21,25 @@
 
 /* GENERAL STYLING */
 
+a {
+   color: #d59a9a;
+}
 
-/* SHOW-PAGE STYLING */
+.no-padding {
+  margin :0;
+}
 
-.container, .col, .partial {
-  height: 100%;
-}
-.col {
-  padding: 0;
-}
-.partial {
-  padding: 20px;
+// NAVBAR
 
-  h3 {
-    margin-top: 0;
-  }
+.navbar {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  height: 50px;
 }
-.tags-index-partial {
-  background-color: #CCC;
-}
-.tags-show-partial {
-  background-color: #DDD;
-}
-.sheets-show-partial {
-  background-color: #EEE;
-}
-.tag-list {
-  list-style-type: none;
-  padding-left: 0;
+
+.navbar-brand {
+  padding: 0 15px;
 }
 
 

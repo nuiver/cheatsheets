@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// # INDEX STYLING
+
+// tags overview block
+
+.block_tags_overview {
+  min-height: 50vh;
+  padding: 20px 0;
+  background-color: #eeeeee;
+}
+
+.tag_title {
+  font-size: 28px;
+}
+
+
+.tags_index_partial ul {
+  padding: 0;
+}
+
+.tag_icon_partial {
+  height: 14px;
+  width: 14px;
+}
+
+.tag_title_partial {
+display: inline-block;
+font-size: 18px;
+}
+.block_read_items {
+  padding-top: 20px;
+}
 
 .head_item_tag {
   font-weight: 800;
