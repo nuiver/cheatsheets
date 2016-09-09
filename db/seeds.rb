@@ -1,13 +1,64 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Sheet.delete_all
 Tag.delete_all
+Profile.delete_all
+User.delete_all
+
+jorge = User.create({
+  email: 'jorge@test.com',
+  password: 'abcd1234'
+})
+mark = User.create({
+  email: 'mark@test.com',
+  password: 'abcd1234'
+})
+matthijs = User.create({
+  email: 'matthijs@test.com',
+  password: 'abcd1234'
+})
+nienke = User.create({
+  email: 'nienke@test.com',
+  password: 'abcd1234'
+})
+admin = User.create({
+  email: 'admin@test.com',
+  password: 'abcd1234'
+})
+
+pr_jorge = Profile.create({
+  first_name: 'Jorge',
+  last_name: 'Oosthoek',
+  avatar: open('https://avatars0.githubusercontent.com/u/19707056?v=3&s=460'),
+  bio: 'Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada.',
+  user: jorge
+})
+pr_mark = Profile.create({
+  first_name: 'Mark',
+  last_name: 'Nuiver',
+  avatar: open('https://avatars0.githubusercontent.com/u/16024059?v=3&s=460'),
+  bio: 'Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.',
+  user: mark
+})
+pr_matthijs = Profile.create({
+  first_name: 'Matthijs',
+  last_name: 'van den Berg',
+  avatar: open('https://avatars0.githubusercontent.com/u/16759160?v=3&s=460'),
+  bio: 'Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.',
+  user: matthijs
+})
+pr_nienke = Profile.create({
+  first_name: 'Nienke',
+  last_name: 'Bos',
+  avatar: open('https://avatars2.githubusercontent.com/u/20145582?v=3&s=460'),
+  bio: 'Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis.',
+  user: nienke
+})
+pr_admin = Profile.create({
+  first_name: 'Wouter',
+  last_name: 'de Vos',
+  avatar: open('https://avatars0.githubusercontent.com/u/309331?v=3&s=460'),
+  bio: 'Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.',
+  user: admin
+})
 
 ruby = Tag.create({ title: 'Ruby' })
 rails = Tag.create({ title: 'Rails '})
