@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col col-xs-12 col-sm-5 col-md-2">
-    <%= render partial: "tags/index", locals: { tags: @tags, selected_tag: @sheet.tags.first } %>
+    <%= render partial: "tags/index", locals: { tags: @tags, selected_tag: (@tag || @sheet.tags.first) } %>
   </div>
   <div class="col col-xs-12 col-sm-7 col-md-3">
-    <%= render partial: "tags/show", locals: { tag: @sheet.tags.first, selected_sheet: @sheet } %>
+    <%= render partial: "tags/show", locals: { tag: (@tag || @sheet.tags.first), selected_sheet: @sheet } %>
   </div>
   <div class="col col-xs-12 col-sm-12 col-md-7">
     <%= render partial: "sheets/show", locals: { sheet: @sheet } %>

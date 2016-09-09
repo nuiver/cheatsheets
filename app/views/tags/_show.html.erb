@@ -5,7 +5,7 @@
       <% if sheet == selected_sheet %>
         <i><%= sheet.title %></i>
       <% else %>
-        <%= sheet.title %>
+        <%= link_to sheet.title, sheet_path(sheet.id, tag: tag.id) %>
       <% end %>
     </li>
   <% end %></ul>

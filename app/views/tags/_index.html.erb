@@ -9,7 +9,7 @@
           <% if tag.sheets.length == 0 %>
             <%= link_to tag.title, sheets_path %>
           <% else %>
-            <%= link_to tag.title, sheet_path(tag.sheets.first) %>
+            <%= link_to tag.title, { controller: 'sheets', action: 'show', id: tag.sheets.first.id, tag: tag.id } %>
           <% end %>
         <% end %>
       </div>
