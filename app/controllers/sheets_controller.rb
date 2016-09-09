@@ -11,7 +11,6 @@ class SheetsController < ApplicationController
   end
 
   def new
-    @sheet = Sheet.new
   end
 
   def create
@@ -19,7 +18,7 @@ class SheetsController < ApplicationController
     if @sheet.save
       redirect_to @sheet
     else
-      render 'new'
+      redirect_to sheets_path(@sheet)
     end
   end
 

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :sheets
   resources :tags
   resources :profiles
+
 end
