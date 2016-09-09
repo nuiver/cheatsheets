@@ -1,1 +1,14 @@
 @import "bootstrap";
+
+.container, .col, .partial {
+  height: 100%;
+}
+.tags-index-partial {
+  background-color: #CCC;
+}
+.tags-show-partial {
+  background-color: #DDD;
+}
+.sheets-show-partial {
+  background-color: #EEE;
+}
