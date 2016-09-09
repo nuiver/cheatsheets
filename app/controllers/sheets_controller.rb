@@ -11,14 +11,15 @@ class SheetsController < ApplicationController
   end
 
   def new
+    @sheet = Sheet.new
   end
 
   def create
     @sheet = Sheet.new(sheet_params)
     if @sheet.save
-      redirect_to sheets_path(@sheet)
+      redirect_to sheets_path
     else
-      redirect_to sheets_path(@sheet)
+      render :new
     end
   end
 
@@ -34,6 +35,7 @@ class SheetsController < ApplicationController
     @sheet.destroy
     redirect_to root_path
   end
+
 
   private
 

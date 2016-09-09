@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :tags
   resources :profiles
 
+get "sheets/:id" => "sheets#show"
 end

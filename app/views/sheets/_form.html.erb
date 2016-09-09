@@ -1,36 +1,25 @@
-<form class="form-inline">
-  <div class="container">
-    <%= form_for :sheet, class: "form-group" , url: sheets_path do |f| %>
+<div class="container">
+  <div class="row new-sheet">
 
-    <!-- <div class="field col-xs-4">
-     <br><br>
-      <%# f.collection_select :tag_id, Tag.all, :id, :title, {:label => "Choose tag"}, {:class => 'form-control'} %>
-    </div> -->
+    <%= form_for @sheet, class: "form-group" do |f| %>
 
-    <!-- class="col-xs-12" -->
-    <div>
-      <br>
-      <%= f.text_field :title, class: "form-control", placeholder: "Add a title to your cheatsheet..." %>
-    </div>
+        <div class="field col-xs-8">
 
-     <div>
-      <br>
-      <%= f.text_area :body, class: "form-control", placeholder: "Type your notes here...", size: "40x15" %>
-    </div>
+          <div class="col-xs-8">
+            <%= f.text_field :title, class: "form-control", placeholder: "What's the title of this cheatsheet?" %>
+          </div>
 
-    <div>
-      <br>
-      <%= f.file_field :image_url %>
-    </div>
+          <div class="col-xs-8">
+            <%= f.text_area :body, class: "form-control", size: "40x15", placeholder: "Type your cheat here...." %>
+          </div>
 
-    <div>
-       <%= link_to 'Cancel', sheets_path, class: 'btn'  %>
-       <%= f.submit class: 'btn' %>
-    </div>
+          <div class="col-xs-8 text-right">
+           <%= link_to 'Cancel', root_path, class: 'btn btn-default'  %>
+           <%= f.submit "Create", class: "btn" %>
+          </div>
+
+        </div>
 
     <% end %>
-
   </div>
-</form>
-
-<!-- class="col-xs-8 text-right" -->
+</div>
