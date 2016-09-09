@@ -1,3 +1,12 @@
 <div class="partial tags-show-partial">
-  List of sheets for a tag
+  <h3><%= tag.title %></h3>
+  <ul><% tag.sheets.each do |sheet| %>
+    <li>
+      <% if sheet == selected_sheet %>
+        <i><%= sheet.title %></i>
+      <% else %>
+        <%= sheet.title %>
+      <% end %>
+    </li>
+  <% end %></ul>
 </div>

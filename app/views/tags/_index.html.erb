@@ -1,3 +1,11 @@
 <div class="partial tags-index-partial">
-  List of tags
+  <ul><% tags.each do |tag| %>
+    <li>
+      <% if tag == selected_tag %>
+        <i><%= tag.title %></i>
+      <% else %>
+        <%= tag.title %>
+      <% end %>
+    </li>
+  <% end %></ul>
 </div>

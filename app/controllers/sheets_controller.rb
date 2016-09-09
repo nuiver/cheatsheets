@@ -6,6 +6,8 @@ class SheetsController < ApplicationController
   end
 
   def show
+    @sheet = Sheet.find(params[:id])
+    @tags = Tag.all
   end
 
   def new
