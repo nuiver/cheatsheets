@@ -7,6 +7,12 @@ class SheetsController < ApplicationController
 
   def show
     @sheet = Sheet.find(params[:id])
+    if params[:tag].nil?
+      @tag = nil
+    else
+      @tag = Tag.find(params[:tag])
+    end
+
     @tags = Tag.all
   end
 
