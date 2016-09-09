@@ -17,9 +17,8 @@ gem 'cancancan'
 gem 'carrierwave'
 gem 'cloudinary'
 
-gem 'bootstrap-sass'
 gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'rails-assets-tether', '>= 1.1.0'
+gem 'bootstrap-sass'
 
 
 group :development, :test do
@@ -41,3 +40,7 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
