@@ -16,6 +16,13 @@ gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 group :development do
