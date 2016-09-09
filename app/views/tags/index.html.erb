@@ -1,2 +1,23 @@
-<h1>Tags#index</h1>
-<p>Find me in app/views/tags/index.html.erb</p>
+<div class="container">
+
+  <div class='tag_overwiew col-md-12'>
+    <%= render @tags %>
+
+  </div>
+
+  <div class='most_read_items col-md-6'>
+    <div class="head_item">Most used cheatsheets</div>
+    <div class="read_item">Facillimum id quidem est, inquam.</div>
+    <div class="read_item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    <div class="read_item">Estne, quaeso, inquam, sitienti in bibendo voluptas?</div>
+    <div class="read_item">Facillimum id quidem est, inquam.</div>
+  </div>
+
+  <div class="recent_items col-md-6">
+    <div class="head_item">Latest cheatsheets</div>
+    <div class="read_item">Facillimum id quidem est, inquam.</div>
+    <div class="read_item">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    <div class="read_item">Proclivi currit oratio?</div>
+  </div>
+
+</div>
