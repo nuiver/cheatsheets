@@ -1,11 +1,18 @@
 <div class="partial tags-index-partial">
-  <ul><% tags.each do |tag| %>
+  <ul style="list-style-type: none;"><% tags.each do |tag| %>
     <li>
-      <% if tag == selected_tag %>
-        <i><%= tag.title %></i>
-      <% else %>
-        <%= tag.title %>
-      <% end %>
+      <div class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %> col-md-1'></div>
+      <div class='tag_title col-md-5'>
+        <% if tag == selected_tag %>
+          <i><%= tag.title %></i>
+        <% else %>
+          <% if tag.sheets.length == 0 %>
+            <%= link_to tag.title, sheets_path %>
+          <% else %>
+            <%= link_to tag.title, sheet_path(tag.sheets.first) %>
+          <% end %>
+        <% end %>
+      </div>
     </li>
   <% end %></ul>
 </div>
