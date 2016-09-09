@@ -18,10 +18,17 @@ class SheetsController < ApplicationController
 
   def new
     @sheet = Sheet.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
 
   def create
     @sheet = Sheet.new(sheet_params)
+
     if @sheet.save
       redirect_to sheets_path
     else
@@ -46,7 +53,7 @@ class SheetsController < ApplicationController
   private
 
     def sheet_params
-      params.require(:sheet).permit(:title, :body)
+      params.require(:sheet).permit(:title, :body, {:tag_ids => []})
     end
 
     def find_sheet
