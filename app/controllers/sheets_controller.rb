@@ -16,7 +16,7 @@ class SheetsController < ApplicationController
   def create
     @sheet = Sheet.new(sheet_params)
     if @sheet.save
-      redirect_to @sheet
+      redirect_to sheets_path(@sheet)
     else
       redirect_to sheets_path(@sheet)
     end
