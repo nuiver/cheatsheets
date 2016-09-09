@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
@@ -21,11 +22,26 @@
 
 /* GENERAL STYLING */
 
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 13px;
+  background: #dddddd; /* Old browsers */
+  background: -moz-linear-gradient(top,  #dddddd 0%, #edefef 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #dddddd 0%,#edefef 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #dddddd 0%,#edefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#edefef',GradientType=0 ); /* IE6-9 */
+
+}
+
+h1, h3, h3 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
 a {
    color: #d59a9a;
 }
 
-.no-padding {
+.no-margin {
   margin :0;
 }
 
@@ -36,10 +52,28 @@ a {
   border: none;
   border-radius: 0;
   height: 50px;
-}
+  background: #edefef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #edefef 0%, #dddddd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #edefef 0%,#dddddd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #edefef 0%,#dddddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+  }
 
 .navbar-brand {
   padding: 0;
+}
+
+.nav_logo {
+  margin-top: 8px;
+}
+.nav_title {
+  margin: 17px;
+}
+.nav_title a {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 28px;
+  color: #414141;
 }
 
 

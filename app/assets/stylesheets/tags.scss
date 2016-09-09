@@ -9,13 +9,21 @@
 .block_tags_overview {
   min-height: 50vh;
   padding: 20px 0;
-  background-color: #eeeeee;
+  background-color: #893558;
 }
 
 .tag_title {
   font-size: 28px;
 }
+.tag_icon {
+  padding-top: 8px;
+  color: #fff;
+  font-size: 25px;
+}
 
+.icon-codaisseur {
+  background: "/assets/codaisseur-logo-9a0e0d27d0709f6e9df039a3b531f44161aa4dfb04448eb52f822fba9006dba3.svg"
+}
 
 .tags_index_partial ul {
   padding: 0;
@@ -35,7 +43,9 @@ position: relative;
 font-size: 18px;
 }
 .block_read_items {
+  height: calc(50vh - 50px);
   padding-top: 20px;
+  background: #fff;
 }
 
 .head_item_tag {
