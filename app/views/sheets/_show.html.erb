@@ -1,3 +1,7 @@
 <div class="partial sheets-show-partial">
-  Selected sheet
+  <h3><%= sheet.title %></h3>
+  <i><% sheet.tags.each do |tag| %>
+    <%= tag.title %>
+  <% end %></i>
+  <p><%= sheet.body %></p>
 </div>

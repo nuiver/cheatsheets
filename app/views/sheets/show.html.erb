@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col col-md-2">
-    <%= render partial: "tags/index" %>
+    <%= render partial: "tags/index", locals: { tags: @tags, selected_tag: @sheet.tags.first } %>
   </div>
   <div class="col col-md-3">
-    <%= render partial: "tags/show" %>
+    <%= render partial: "tags/show", locals: { tag: @sheet.tags.first, selected_sheet: @sheet } %>
   </div>
   <div class="col col-md-7">
-    <%= render partial: "sheets/show" %>
+    <%= render partial: "sheets/show", locals: { sheet: @sheet } %>
   </div>
 </div>
