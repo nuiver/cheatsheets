@@ -17,6 +17,10 @@ gem 'cancancan'
 gem 'carrierwave'
 gem 'cloudinary'
 
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'rails-assets-tether', '>= 1.1.0'
+
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
