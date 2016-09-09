@@ -60,19 +60,19 @@ pr_admin = Profile.create({
   user: admin
 })
 
-ruby = Tag.create({ title: 'Ruby' })
-rails = Tag.create({ title: 'Rails '})
-ajax = Tag.create({ title: 'AJAX' })
-javascript = Tag.create({ title: 'JavaScript' })
-jquery = Tag.create({ title: 'jQuery' })
-es6 = Tag.create({ title: 'ES6' })
-react = Tag.create({ title: 'React' })
-redux = Tag.create({ title: 'Redux' })
-feathers = Tag.create({ title: 'Feathers' })
-tdd = Tag.create({ title: 'TDD' })
-git = Tag.create({ title: 'Git' })
-github = Tag.create({ title: 'Github' })
-setup = Tag.create({ title: 'Setup' })
+ruby = Tag.create({ title: 'Ruby', div_class: 'devicon-ruby-plain' })
+rails = Tag.create({ title: 'Rails', div_class: 'devicon-rails-plain'})
+ajax = Tag.create({ title: 'AJAX', div_class: 'devicon-nodejs-plain' })
+javascript = Tag.create({ title: 'JavaScript', div_class: 'devicon-javascript-plain' })
+jquery = Tag.create({ title: 'jQuery', div_class: 'devicon-jquery-plain' })
+es6 = Tag.create({ title: 'ES6', div_class: 'icon-codaisseur' })
+react = Tag.create({ title: 'React', div_class: 'devicon-react-plain' })
+redux = Tag.create({ title: 'Redux', div_class: 'icon-codaisseur' })
+feathers = Tag.create({ title: 'Feathers', div_class: 'icon-codaisseur' })
+tdd = Tag.create({ title: 'TDD', div_class: 'icon-codaisseur' })
+git = Tag.create({ title: 'Git', div_class: 'devicon-git-plain' })
+github = Tag.create({ title: 'Github', div_class: 'devicon-github-plain' })
+setup = Tag.create({ title: 'Setup', div_class: 'icon-codaisseur' })
 
 rails_model = Sheet.create({
   title: 'Generate model in Rails',
