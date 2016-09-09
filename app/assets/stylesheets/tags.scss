@@ -22,12 +22,16 @@
 }
 
 .tag_icon_partial {
+  display: inline-block;
+  margin-right: 10px;
+  color: #d59a9a;
   height: 14px;
   width: 14px;
 }
 
 .tag_title_partial {
 display: inline-block;
+position: relative;
 font-size: 18px;
 }
 .block_read_items {
