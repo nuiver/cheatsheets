@@ -17,6 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+/* GENERAL STYLING */
+
+
+/* SHOW-PAGE STYLING */
+
 .container, .col, .partial {
   height: 100%;
 }
@@ -28,4 +34,17 @@
 }
 .sheets-show-partial {
   background-color: #EEE;
+}
+
+
+
+/* FORM STYLING */
+.field {
+    margin-bottom: 10px;
+}
+.form-control {
+  margin: 10px;
+}
+.btn {
+  margin: 5px;
 }
