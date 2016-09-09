@@ -15,6 +15,7 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'carrierwave'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'byebug', platform: :mri
