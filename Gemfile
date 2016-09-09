@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan'
 
+gem 'carrierwave'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
