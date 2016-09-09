@@ -1,8 +1,8 @@
 <div class="partial tags-index-partial">
   <ul style="list-style-type: none;"><% tags.each do |tag| %>
     <li>
-      <div class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %> col-md-1'></div>
-      <div class='tag_title col-md-5'>
+      <span class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %>'></span>
+      <span class='tag_title'>
         <% if tag == selected_tag %>
           <i><%= tag.title %></i>
         <% else %>
@@ -12,7 +12,7 @@
             <%= link_to tag.title, { controller: 'sheets', action: 'show', id: tag.sheets.first.id, tag: tag.id } %>
           <% end %>
         <% end %>
-      </div>
+      </span>
     </li>
   <% end %></ul>
 </div>
