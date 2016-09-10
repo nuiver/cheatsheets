@@ -45,8 +45,10 @@ class SheetsController < ApplicationController
     @sheet = Sheet.new(sheet_params)
 
     if @sheet.save
-      format.html { redirect_to sheet_path(@sheet) }
-      format.js
+      respond_to do |format|
+        format.html { redirect_to sheet_path(@sheet.id) }
+        format.js
+      end
     else
       render :new
     end
