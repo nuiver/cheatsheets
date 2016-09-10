@@ -21,23 +21,25 @@
 
   <%= form_for @sheet, class: "form-group" do |f| %>
 
-    <div >
-      <div >
+
+      <div id="tags-<%= sheet.id %>" class="edit-tags">
         <%= f.collection_select "tag_ids", Tag.all, :id, :title,
         { include_blank: 'none'}, {multiple: true } %>
       </div>
-      <div >
+      <div id="title-<%= sheet.id %>" class="edit-title">
         <%= f.text_field :title, class: "form-control", placeholder: "What's the title of this cheatsheet?" %>
       </div>
-      <textarea class='form-control edit-body' name="name" rows="6"><%= sheet.body %>
-      </textarea>
+      <div id="body-<%= sheet.id %>" class='edit-body'>
+      <%= f.text_area :body, class: "form-control", placeholder: "Type your cheat here...." %>
+      </div>
+
+    <div class="col-xs-8 text-right">
+     <%= link_to 'Cancel', root_path, class: 'btn btn-default' %>
     </div>
+    <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
 
   <% end %>
 
-  <div class="col-xs-8 text-right">
-   <%= link_to 'Cancel', root_path, class: 'btn btn-default' %>
-  </div>
-  <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
+
 
 </div>

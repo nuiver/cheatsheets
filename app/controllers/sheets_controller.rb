@@ -44,7 +44,7 @@ class SheetsController < ApplicationController
   end
 
   def update
-    @sheet = Sheet.find(sheet_params)
+    @sheet = Sheet.find(params[:id])
 
     if @sheet.update(sheet_params)
       respond_to do |format|
