@@ -3,5 +3,8 @@ class Sheet < ApplicationRecord
 
   validates_presence_of :title, :body, :tag_ids
 
+  def self.search(search)
+    where("title ILIKE ? ", "%#{search}%")
+  end
 
 end
