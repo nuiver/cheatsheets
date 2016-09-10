@@ -4,7 +4,7 @@
       <li class="active"><%= sort_link "created_at", "Sort by date", tag: tag.id %></li>
     </ul>
   </div>
-  <% selection = tag.sheets.order("#{params[:column]} #{params[:direction]}").select_owned( current_user != nil ? current_user.id : nil ) %>
+  <% selection = tag.sheets.order("#{params[:column]} #{params[:direction]}") %>
   <% if selection != [] %>
     <% selection.each do |sheet|  %>
       <% if sheet == selected_sheet %>
