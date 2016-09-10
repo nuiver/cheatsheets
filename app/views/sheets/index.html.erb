@@ -3,9 +3,11 @@
     <%= render partial: "tags/index", locals: { tags: @tags, selected_tag: nil } %>
   </div>
   <div class="col col-xs-12 col-sm-7 col-md-3 block_centre">
-    <%= render partial: "sheets/index", locals: { sheets: @sheets, selected_sheet: @sheets.first } %>
+    <%= render partial: "sheets/index", locals: { sheets: @sheets, selected_sheet: @sheets.first || nil } %>
   </div>
   <div class="col col-xs-12 col-sm-12 col-md-7 block_right">
-    <%= render partial: "sheets/show", locals: { sheet: @sheets.first } %>
+    <% if @sheets.first != nil %>
+      <%= render partial: "sheets/show", locals: { sheet: @sheets.first || nil } %>
+    <% end %>
   </div>
 </div>
