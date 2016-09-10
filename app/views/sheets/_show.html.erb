@@ -1,16 +1,25 @@
 <div class="partial sheets-show-partial">
-  <% if user_signed_in?%>
-    <%= link_to sheet_path(@sheet), method: :delete, data: { confirm: "Are you sure to delete this sheet?" } do %><span class="link_tool fa fa-trash-o"></span><% end %>
-    <div class="link_tool fa fa-star-o"></div>
-    <div class="link_tool fa fa-pencil"></div>
-  <%end%>
+  <div class="link_tool fa fa-trash-o"></div>
+  <div class="link_tool fa fa-star-o"></div>
+  <a id="<%= sheet.id %>" class="link_tool edit-btn-sheet" href="#">
+    <i class="fa fa-pencil"></i>
+  </a>
 
-  <h3><%= sheet.title %></h3>
+<div>
+  <h3 class="sheet-title"><%= sheet.title %></h3>
 
-  <div>
+  <div  class="sheet-tags">
     <% sheet.tags.each do |tag| %>
       <i><%= tag.title %></i>
     <% end %>
   </div>
-  <p><%= markdown(sheet.body) %></p>
+  <div id="sheet-<%= sheet.id %>" class="sheet-body"><%= markdown(@sheet.body) %></div>
+</div>
+
+  <div id="form-<%= sheet.id %>" class="edit-sheet-form hidden">
+    <textarea class='form-control edit-body' name="name" rows="6"><%= sheet.body %>
+    </textarea>
+    <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
+  </div>
+
 </div>
