@@ -1,6 +1,6 @@
 <div class="tag_button col-md-6">
   <div class='<%= tag.div_class ? tag.div_class : fallback_icon %> col-md-1 tag_icon'></div>
   <div class='tag_title col-md-5'>
-    <%= link_to tag.title , sheets_path %>
+    <%= link_to tag.title , ( tag.sheets != [] ? sheet_path(tag.sheets.first.id) : root_path ) %>
   </div>
 </div>
