@@ -11,9 +11,19 @@
 .block_centre {
   background-color: #ecbebe;
   height: calc(100vh - 50px);
+  padding: 0 !important;
 }
 
 .block_right {
   background-color: #fff;
   height: calc(100vh - 50px);
+}
+
+.link_tool {
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  display: inline-block;
+  float:right;
+  color: #aaa;
 }

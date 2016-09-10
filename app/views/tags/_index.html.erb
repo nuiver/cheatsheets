@@ -4,7 +4,7 @@
       <div class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %> tag_icon_partial'></div>
       <div class='tag_title_partial'>
         <% if tag == selected_tag %>
-          <i><%= tag.title %></i>
+          <%= tag.title %>
         <% else %>
           <% if tag.sheets.length == 0 %>
             <%= link_to tag.title, sheets_path %>

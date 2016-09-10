@@ -41,6 +41,38 @@
 display: inline-block;
 position: relative;
 font-size: 18px;
+color: #fff;
+}
+
+
+.tags-show-partial h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #601635;
+}
+
+// .tags-show-partial-head {
+//   padding: 1px 10px;
+//   background: #fff;
+//   height: 30px;
+// }
+// .tags-show-partial-head h5{
+//   font-weight: 200;
+//   font-size: 12px;
+// }
+.tags-show-partial-element {
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+  border-top: 1px solid #893558;
+  border-bottom: 1px solid #893558;
+}
+.tags-show-partial-element.selected {
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(213,154,154,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(213,154,154,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(213,154,154,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d59a9a',GradientType=0 ); /* IE6-9 */
 }
 .block_read_items {
   height: calc(50vh - 50px);
