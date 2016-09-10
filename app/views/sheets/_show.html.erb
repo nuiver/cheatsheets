@@ -1,16 +1,45 @@
-<div class="partial sheets-show-partial">
-  <% if user_signed_in?%>
-    <%= link_to sheet_path(@sheet), method: :delete, data: { confirm: "Are you sure to delete this sheet?" } do %><span class="link_tool fa fa-trash-o"></span><% end %>
+<div id="sheet-<%= sheet.id %>" class="sheet-body">
+  <div class="partial sheets-show-partial">
+    <div class="link_tool fa fa-trash-o"></div>
     <div class="link_tool fa fa-star-o"></div>
-    <div class="link_tool fa fa-pencil"></div>
-  <%end%>
+    <a id="<%= sheet.id %>" class="link_tool edit-btn-sheet" href="#">
+      <i class="fa fa-pencil"></i>
+    </a>
 
-  <h3><%= sheet.title %></h3>
+    <h3 class="sheet-title"><%= sheet.title %></h3>
 
-  <div>
-    <% sheet.tags.each do |tag| %>
-      <i><%= tag.title %></i>
-    <% end %>
+    <div  class="sheet-tags">
+      <% sheet.tags.each do |tag| %>
+        <i><%= tag.title %></i>
+      <% end %>
+    </div>
+    <div><%= markdown(@sheet.body) %></div>
   </div>
-  <p><%= markdown(sheet.body) %></p>
+</div>
+
+<div id="form-<%= sheet.id %>" class="edit-sheet-form hidden">
+
+  <%= form_for @sheet, class: "form-group" do |f| %>
+
+
+      <div id="tags-<%= sheet.id %>" class="edit-tags">
+        <%= f.collection_select "tag_ids", Tag.all, :id, :title,
+        { include_blank: 'none'}, {multiple: true } %>
+      </div>
+      <div id="title-<%= sheet.id %>" class="edit-title">
+        <%= f.text_field :title, class: "form-control", placeholder: "What's the title of this cheatsheet?" %>
+      </div>
+      <div id="body-<%= sheet.id %>" class='edit-body'>
+      <%= f.text_area :body, class: "form-control", placeholder: "Type your cheat here...." %>
+      </div>
+
+    <div class="col-xs-8 text-right">
+     <%= link_to 'Cancel', root_path, class: 'btn btn-default' %>
+    </div>
+    <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
+
+  <% end %>
+
+
+
 </div>

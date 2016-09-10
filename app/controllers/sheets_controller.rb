@@ -36,15 +36,21 @@ class SheetsController < ApplicationController
     @sheet = Sheet.new(sheet_params)
 
     if @sheet.save
-      redirect_to sheet_path(@sheet.id)
+      format.html { redirect_to sheet_path(@sheet) }
+      format.js
     else
       render :new
     end
   end
 
   def update
+    @sheet = Sheet.find(params[:id])
+
     if @sheet.update(sheet_params)
-      redirect_to @sheet
+      respond_to do |format|
+        format.html {redirect_to sheet_path(@sheet)}
+        format.js
+      end
     else
       render 'edit'
     end
