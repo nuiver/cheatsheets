@@ -45,7 +45,6 @@ class SheetsController < ApplicationController
     @sheet = Sheet.new(sheet_params)
 
     if @sheet.save
-      byebug
       respond_to do |format|
         format.html { redirect_to sheet_path(@sheet.id) }
         format.js
