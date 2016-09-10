@@ -19,7 +19,7 @@ class SheetsController < ApplicationController
     else
       @tag = Tag.find(params[:tag])
     end
-    
+
     @tags = Tag.order("LOWER(title) asc")
   end
 
@@ -53,7 +53,7 @@ class SheetsController < ApplicationController
 
   def destroy
     @sheet.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: "Sheet was successfully deleted!"
   end
 
   private
