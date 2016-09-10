@@ -1,5 +1,6 @@
 class SheetsController < ApplicationController
   before_action :find_sheet, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   def index
     @sheets = Sheet.all.order("created_at desc")
@@ -12,7 +13,7 @@ class SheetsController < ApplicationController
     else
       @tag = Tag.find(params[:tag])
     end
-
+    
     @tags = Tag.order("LOWER(title) asc")
   end
 
@@ -49,14 +50,25 @@ class SheetsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
 
-    def sheet_params
-      params.require(:sheet).permit(:title, :body, {:tag_ids => []})
-    end
+  def sheet_params
+    params.require(:sheet).permit(:title, :body, {:tag_ids => []})
+  end
 
-    def find_sheet
-      @sheet = Sheet.find(params[:id])
-    end
+  def find_sheet
+    @sheet = Sheet.find(params[:id])
+  end
+
+  def sortable_columns
+  ["created_at"]
+  end
+
+  def sort_column
+  sortable_columns.include?(params[:column]) ? params[:column] : "created_at"
+  end
+
+  def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
 end
