@@ -12,6 +12,14 @@
       </div>
       <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
+          <li>
+          </li>
+          <li>
+            <%= link_to "New item", new_sheet_path  %>
+          </li>
+          <li class="search-li">
+            <%= render "layouts/search" %>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= !current_user.profile.nil? ? current_user.profile.full_name : current_user.email %> <b class="caret"></b></a>
             <ul class="dropdown-menu">

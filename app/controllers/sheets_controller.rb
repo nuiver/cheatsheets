@@ -3,7 +3,13 @@ class SheetsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @sheets = Sheet.all.order("created_at desc")
+    if params[:search]
+      @sheets = Sheet.search(params[:search]).order(created_at: :desc)
+    else
+      @sheets = Sheet.all.order("created_at desc")
+    end
+
+    @tags = Tag.order("LOWER(title) asc")
   end
 
   def show
