@@ -11,9 +11,12 @@
         </ul>
       </div>
       <% if user_signed_in? %>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
           <li>
+            <%= link_to "Create Sheet", new_sheet_path  %>
           </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
           <li>
             <%= render "layouts/flashes" %>
           </li>
