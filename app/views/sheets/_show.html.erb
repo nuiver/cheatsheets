@@ -19,7 +19,7 @@
 
 <div id="form-<%= sheet.id %>" class="edit-sheet-form hidden">
 
-  <%= form_for @sheet, class: "form-group" do |f| %>
+  <%= form_for sheet, class: "form-group" do |f| %>
       <div id="tags-<%= sheet.id %>" class="edit-tags">
         <%= f.collection_select "tag_ids", Tag.all, :id, :title,
         { include_blank: 'none'}, {multiple: true } %>
