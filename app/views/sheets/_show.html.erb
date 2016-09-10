@@ -1,25 +1,43 @@
-<div class="partial sheets-show-partial">
-  <div class="link_tool fa fa-trash-o"></div>
-  <div class="link_tool fa fa-star-o"></div>
-  <a id="<%= sheet.id %>" class="link_tool edit-btn-sheet" href="#">
-    <i class="fa fa-pencil"></i>
-  </a>
+<div id="sheet-<%= sheet.id %>" class="sheet-body">
+  <div class="partial sheets-show-partial">
+    <div class="link_tool fa fa-trash-o"></div>
+    <div class="link_tool fa fa-star-o"></div>
+    <a id="<%= sheet.id %>" class="link_tool edit-btn-sheet" href="#">
+      <i class="fa fa-pencil"></i>
+    </a>
 
-<div>
-  <h3 class="sheet-title"><%= sheet.title %></h3>
+    <h3 class="sheet-title"><%= sheet.title %></h3>
 
-  <div  class="sheet-tags">
-    <% sheet.tags.each do |tag| %>
-      <i><%= tag.title %></i>
-    <% end %>
+    <div  class="sheet-tags">
+      <% sheet.tags.each do |tag| %>
+        <i><%= tag.title %></i>
+      <% end %>
+    </div>
+    <div><%= markdown(@sheet.body) %></div>
   </div>
-  <div id="sheet-<%= sheet.id %>" class="sheet-body"><%= markdown(@sheet.body) %></div>
 </div>
 
-  <div id="form-<%= sheet.id %>" class="edit-sheet-form hidden">
-    <textarea class='form-control edit-body' name="name" rows="6"><%= sheet.body %>
-    </textarea>
-    <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
+<div id="form-<%= sheet.id %>" class="edit-sheet-form hidden">
+
+  <%= form_for @sheet, class: "form-group" do |f| %>
+
+    <div >
+      <div >
+        <%= f.collection_select "tag_ids", Tag.all, :id, :title,
+        { include_blank: 'none'}, {multiple: true } %>
+      </div>
+      <div >
+        <%= f.text_field :title, class: "form-control", placeholder: "What's the title of this cheatsheet?" %>
+      </div>
+      <textarea class='form-control edit-body' name="name" rows="6"><%= sheet.body %>
+      </textarea>
+    </div>
+
+  <% end %>
+
+  <div class="col-xs-8 text-right">
+   <%= link_to 'Cancel', root_path, class: 'btn btn-default' %>
   </div>
+  <button sheet_id="<%= sheet.id %>" class="btn pull-right save-edit">Save edit</button>
 
 </div>
