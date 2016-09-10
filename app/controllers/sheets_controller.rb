@@ -1,19 +1,28 @@
 class SheetsController < ApplicationController
   before_action :find_sheet, only: [:show, :edit, :update, :destroy]
+  before_action :check_access
   helper_method :sort_column, :sort_direction
 
+
   def index
+
+    @sheets = Sheet.select{ |i| @ids.include?(i.user_id) }
+
     if params[:search]
-      @sheets = Sheet.search(params[:search]).order(created_at: :desc)
+      @sheets = @sheets.search(params[:search]).order(created_at: :desc)
     else
-      @sheets = Sheet.select{ |i| i[:user] == current_user || i[:user] == (User.find{ |x| x[:email] ==  'admin@test.com' }.id) }.order("created_at desc")
+      @sheets = @sheets.sort_by{ |sheet| sheet[:created_at]}
     end
 
     @tags = Tag.order("LOWER(title) asc")
   end
 
   def show
+
+    @sheets = Sheet.select{ |i| @ids.include?(i.user_id) }
+
     @sheet = Sheet.find(params[:id])
+
     if params[:tag].nil?
       @tag = nil
     else
@@ -77,4 +86,10 @@ class SheetsController < ApplicationController
   def sort_direction
   %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
+
+  def check_access
+    @ids = [User.find{ |x| x[:email] ==  'admin@test.com' }.id]
+    @ids << current_user.id if current_user
+  end
+
 end

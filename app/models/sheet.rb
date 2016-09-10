@@ -9,4 +9,10 @@ class Sheet < ApplicationRecord
     where("title ILIKE ? ", "%#{search}%")
   end
 
+  def self.select_owned(current_user_id)
+    @ids = [User.find{ |x| x[:email] ==  'admin@test.com' }.id]
+    (@ids << current_user_id) if current_user_id
+    select{ |i| @ids.include?(i.user_id) }
+  end
+
 end
