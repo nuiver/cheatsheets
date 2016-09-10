@@ -6,7 +6,7 @@ class SheetsController < ApplicationController
     if params[:search]
       @sheets = Sheet.search(params[:search]).order(created_at: :desc)
     else
-      @sheets = Sheet.all.order("created_at desc")
+      @sheets = Sheet.select{ |i| i[:user] == current_user || i[:user] == (User.find{ |x| x[:email] ==  'admin@test.com' }.id) }.order("created_at desc")
     end
 
     @tags = Tag.order("LOWER(title) asc")
@@ -19,7 +19,7 @@ class SheetsController < ApplicationController
     else
       @tag = Tag.find(params[:tag])
     end
-    
+
     @tags = Tag.order("LOWER(title) asc")
   end
 
