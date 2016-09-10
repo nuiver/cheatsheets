@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_action :find_tag, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tags = Tag.all.order("title asc")
+    @tags = Tag.order("LOWER(title) asc")
   end
 
   def show

@@ -13,7 +13,7 @@ class SheetsController < ApplicationController
       @tag = Tag.find(params[:tag])
     end
 
-    @tags = Tag.all
+    @tags = Tag.order("LOWER(title) asc")
   end
 
   def new
