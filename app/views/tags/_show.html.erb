@@ -1,17 +1,19 @@
 <div class="partial tags-show-partial">
   <div class="tags-show-partial-head">
-    <h5><%= tag.title %></h5>
+    <ul class="list-inline">
+      <li class="active"><%= sort_link "created_at", "New", tag: tag.id %></li>
+    </ul>
   </div>
 
-  <% tag.sheets.each do |sheet| %>
-      <% if sheet == selected_sheet %>
-        <div class="tags-show-partial-element selected">
-          <h4><%= sheet.title %></h4>
-        </div>
-      <% else %>
-        <div class="tags-show-partial-element">
-          <h4><%= link_to sheet.title, { controller: 'sheets', action: 'show', id: sheet.id, tag: tag.id } %></h4>
-        </div>
-      <% end %>
+  <% tag.sheets.order("#{params[:column]} #{params[:direction]}").each do |sheet| %>
+    <% if sheet == selected_sheet %>
+      <div class="tags-show-partial-element selected">
+        <h4><%= sheet.title %></h4>
+      </div>
+    <% else %>
+      <div class="tags-show-partial-element">
+        <h4><%= link_to sheet.title, { controller: 'sheets', action: 'show', id: sheet.id, tag: tag.id } %></h4>
+      </div>
+    <% end %>
   <% end %>
 </div>
