@@ -1,2 +1,18 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class='container'>
+<h1>Hello <%= @profile.first_name  %></h1>
+
+<p>This is what we know of you, so far...:</p>
+<br />
+
+<div><%= image_tag @profile.avatar_url.to_s %>
+<p>Email: <%= @profile.user.email %></p>
+<p>First name: <%= @profile.first_name%></p>
+<p>Last name: <%= @profile.last_name %></p>
+<p>Bio: <%= @profile.bio %></p>
+
+<%= link_to "Edit your profile", edit_profile_path( current_user.profile.id ) %><br />
+
+<%= link_to "Change your password", edit_user_registration_path %><br />
+
+<%= link_to "Delete your user account", edit_user_registration_path %><br />
+</div>
