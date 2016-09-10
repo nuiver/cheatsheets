@@ -32,7 +32,6 @@ class SheetsController < ApplicationController
     end
   end
 
-
   def create
     @sheet = Sheet.new(sheet_params)
 
