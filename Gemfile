@@ -24,6 +24,9 @@ gem 'autoprefixer-rails'
 
 gem 'rails-assets-tether', '>= 1.1.0'
 
+gem 'redcarpet'
+gem 'coderay'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'

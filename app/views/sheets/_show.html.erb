@@ -3,5 +3,5 @@
   <i><% sheet.tags.each do |tag| %>
     <%= tag.title %>
   <% end %></i>
-  <p><%= sheet.body %></p>
+  <p><%= markdown(@sheet.body) %></p>
 </div>
