@@ -30,7 +30,7 @@ class SheetsController < ApplicationController
     @sheet = Sheet.new(sheet_params)
 
     if @sheet.save
-      redirect_to sheets_path
+      redirect_to sheet_path(@sheet.id)
     else
       render :new
     end
