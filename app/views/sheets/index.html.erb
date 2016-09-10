@@ -1,2 +1,11 @@
-<h3>CHEATSHEETS</h3>
-<p>Cheat your way to a better future.</p>
+<div class="row">
+  <div class="col col-xs-12 col-sm-5 col-md-2 block_left">
+    <%= render partial: "tags/index", locals: { tags: @tags, selected_tag: nil } %>
+  </div>
+  <div class="col col-xs-12 col-sm-7 col-md-3 block_centre">
+    <%= render partial: "sheets/index", locals: { sheets: @sheets, selected_sheet: @sheets.first } %>
+  </div>
+  <div class="col col-xs-12 col-sm-12 col-md-7 block_right">
+    <%= render partial: "sheets/show", locals: { sheet: @sheets.first } %>
+  </div>
+</div>
