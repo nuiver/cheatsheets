@@ -13,7 +13,7 @@ class SheetsController < ApplicationController
     else
       @tag = Tag.find(params[:tag])
     end
-    
+
     @tags = Tag.order("LOWER(title) asc")
   end
 
@@ -25,7 +25,6 @@ class SheetsController < ApplicationController
       format.js
     end
   end
-
 
   def create
     @sheet = Sheet.new(sheet_params)

@@ -88,4 +88,100 @@ react_feathers = Sheet.create({
   title: 'Connect a React/Redux frontent to a Feathers backend',
   body: 'Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.',
   tags: [ react, redux, feathers ]
-  })
+})
+git_commands = Sheet.create({
+  title: 'Git commands',
+  body:  '`git init` - Create a new git repository
+          `git add .` - Add all changes to the staging area
+          `git commit -m \'commit message\'` - Commit changes to the current branch
+          `git push origin branch-name` - Push the current branch',
+  tags: [ git ]
+})
+rails_controller = Sheet.create({
+  title: 'Default controller actions in Rails',
+  body: '```ruby
+class ProductsController < ApplicationController
+  # GET /products
+  # GET /products.json
+  def index
+    @products = Product.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @products }
+    end
+  end
+
+  # GET /products/1
+  # GET /products/1.json
+  def show
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @product }
+    end
+  end
+
+  # GET /products/new
+  # GET /products/new.json
+  def new
+    @product = Product.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @product }
+    end
+  end
+
+  # GET /products/1/edit
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  # POST /products
+  # POST /products.json
+  def create
+    @product = Product.new(params[:product])
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to @product, notice: \'Product was successfully created.\' }
+        format.json { render json: @product, status: :created, location: @product }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /products/1
+  # PUT /products/1.json
+  def update
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      if @product.update_attributes(params[:product])
+        format.html { redirect_to @product, notice: \'Product was successfully updated.\' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /products/1
+  # DELETE /products/1.json
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    respond_to do |format|
+      format.html { redirect_to products_url }
+      format.json { head :no_content }
+    end
+  end
+end',
+  tags: [ rails ]
+})
