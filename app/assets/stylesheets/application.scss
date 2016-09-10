@@ -12,49 +12,74 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 @import "./navbar";
 
 
 /* GENERAL STYLING */
 
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 13px;
+  background: #dddddd; /* Old browsers */
+  background: -moz-linear-gradient(top,  #dddddd 0%, #edefef 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #dddddd 0%,#edefef 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #dddddd 0%,#edefef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#edefef',GradientType=0 ); /* IE6-9 */
 
-/* SHOW-PAGE STYLING */
-
-.container, .col, .partial {
-  height: 100%;
 }
-.col {
+
+h1, h3, h3 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+a {
+   color: #d59a9a;
+}
+
+.no-margin {
+  margin :0;
+}
+
+// NAVBAR
+
+.navbar {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  height: 50px;
+  background: #edefef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #edefef 0%, #dddddd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #edefef 0%,#dddddd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #edefef 0%,#dddddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+  }
+
+.navbar-brand {
   padding: 0;
 }
-.partial {
-  padding: 20px;
 
-  h3 {
-    margin-top: 0;
-  }
+.nav_logo {
+  margin-top: 8px;
 }
-.tags-index-partial {
-  background-color: #CCC;
+.nav_title {
+  margin: 17px;
 }
-.tags-show-partial {
-  background-color: #DDD;
+.nav_title a {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 28px;
+  color: #414141;
 }
-.sheets-show-partial {
-  background-color: #EEE;
-}
-.tag-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
 
 /* FORM STYLING */
 .field {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .form-control {
   margin: 10px;

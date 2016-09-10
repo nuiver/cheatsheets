@@ -1,7 +1,14 @@
 <div class="partial sheets-show-partial">
+  <div class="link_tool fa fa-trash-o"></div>
+  <div class="link_tool fa fa-star-o"></div>
+  <div class="link_tool fa fa-pencil"></div>
+
   <h3><%= sheet.title %></h3>
-  <i><% sheet.tags.each do |tag| %>
-    <%= tag.title %>
-  <% end %></i>
+
+  <div>
+    <% sheet.tags.each do |tag| %>
+      <i><%= tag.title %></i>
+    <% end %>
+  </div>
   <p><%= markdown(@sheet.body) %></p>
 </div>

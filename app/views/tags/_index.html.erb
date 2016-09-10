@@ -1,18 +1,18 @@
-<div class="partial tags-index-partial">
-  <ul class="tag-list"><% tags.each do |tag| %>
+<div class="partial tags_index_partial">
+  <ul class="tag-list" style="list-style-type: none;"><% tags.each do |tag| %>
     <li>
-      <span class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %>'></span>
-      <span class='tag_title'>
+      <div class='<%= tag.div_class ? tag.div_class : tag.fallback_icon %> tag_icon_partial'></div>
+      <div class='tag_title_partial'>
         <% if tag == selected_tag %>
-          <i><%= tag.title %></i>
+          <%= tag.title %>
         <% else %>
           <% if tag.sheets.length == 0 %>
-            <%= link_to tag.title, sheets_path %>
+            <%= link_to tag.title, sheet_path(params[:id]) %>
           <% else %>
             <%= link_to tag.title, { controller: 'sheets', action: 'show', id: tag.sheets.first.id, tag: tag.id } %>
           <% end %>
         <% end %>
-      </span>
+      </div>
     </li>
   <% end %></ul>
 </div>
