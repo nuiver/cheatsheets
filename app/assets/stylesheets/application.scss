@@ -91,3 +91,9 @@ a {
 .hidden {
   display: none;
 }
+
+.select-column select {
+  margin-top: 10px;
+  width: 100px;
+  height: 300px;
+}

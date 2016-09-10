@@ -6,9 +6,9 @@
       <div class="field col-xs-8">
 
 
-        <div class="field col-xs-4">
+        <div class="pull-right select-column">
           <%= f.collection_select "tag_ids", Tag.all, :id, :title,
-          { include_blank: 'none'}, {multiple: true } %>
+          { include_blank: false }, {multiple: true } %>
         </div>
 
         <div class="col-xs-8">
