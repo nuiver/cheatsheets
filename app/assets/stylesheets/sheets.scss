@@ -6,17 +6,20 @@
   padding-top: 20px;
   background-color: #893558;
   height: calc(100vh - 50px);
+  overflow: auto;
 }
 
 .block_centre {
   background-color: #ecbebe;
   height: calc(100vh - 50px);
   padding: 0 !important;
+  overflow: auto;
 }
 
 .block_right {
   background-color: #fff;
   height: calc(100vh - 50px);
+  overflow: auto;
 }
 
 .link_tool {
