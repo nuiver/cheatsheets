@@ -1,7 +1,9 @@
 <div class="partial sheets-show-partial">
-  <%= link_to sheet_path(@sheet), method: :delete, data: { confirm: "Are you sure to delete this sheet?" } do %><span class="link_tool fa fa-trash-o"></span><% end %>
-  <div class="link_tool fa fa-star-o"></div>
-  <div class="link_tool fa fa-pencil"></div>
+  <% if user_signed_in?%>
+    <%= link_to sheet_path(@sheet), method: :delete, data: { confirm: "Are you sure to delete this sheet?" } do %><span class="link_tool fa fa-trash-o"></span><% end %>
+    <div class="link_tool fa fa-star-o"></div>
+    <div class="link_tool fa fa-pencil"></div>
+  <%end%>
 
   <h3><%= sheet.title %></h3>
 
