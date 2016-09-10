@@ -4,16 +4,18 @@
       <li class="active"><%= sort_link "created_at", "Sort by date", tag: tag.id %></li>
     </ul>
   </div>
-
-  <% tag.sheets.order("#{params[:column]} #{params[:direction]}").each do |sheet| %>
-    <% if sheet == selected_sheet %>
-      <div class="tags-show-partial-element selected">
-        <h4><%= sheet.title %></h4>
-      </div>
-    <% else %>
-      <div class="tags-show-partial-element">
-        <h4><%= link_to sheet.title, { controller: 'sheets', action: 'show', id: sheet.id, tag: tag.id } %></h4>
-      </div>
+  <% selection = tag.sheets.order("#{params[:column]} #{params[:direction]}").select_owned( current_user != nil ? current_user.id : nil ) %>
+  <% if selection != [] %>
+    <% selection.each do |sheet|  %>
+      <% if sheet == selected_sheet %>
+        <div class="tags-show-partial-element selected">
+          <h4><%= sheet.title %></h4>
+        </div>
+      <% else %>
+        <div class="tags-show-partial-element">
+          <h4><%= link_to sheet.title, { controller: 'sheets', action: 'show', id: sheet.id, tag: tag.id } %></h4>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

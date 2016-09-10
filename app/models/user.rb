@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+  has_many :sheets
 
   accepts_nested_attributes_for :profile, :allow_destroy => true
 
