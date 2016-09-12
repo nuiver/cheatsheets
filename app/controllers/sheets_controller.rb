@@ -3,14 +3,11 @@ class SheetsController < ApplicationController
   before_action :check_access
   helper_method :sort_column, :sort_direction
 
-
   def index
-
-    @sheets = Sheet.select{ |i| @ids.include?(i.user_id) }
-
     if params[:search]
-      @sheets = @sheets.search(params[:search]).order(created_at: :desc)
+      @sheets = Sheet.search(params[:search]).order(created_at: :desc)
     else
+      @sheets = Sheet.select{ |i| @ids.include?(i.user_id) }
       @sheets = @sheets.sort_by{ |sheet| sheet[:created_at]}
     end
 
@@ -18,7 +15,6 @@ class SheetsController < ApplicationController
   end
 
   def show
-
     @sheets = Sheet.select{ |i| @ids.include?(i.user_id) }
 
     @sheet = Sheet.find(params[:id])
@@ -98,5 +94,4 @@ class SheetsController < ApplicationController
     @ids = [User.find{ |x| x[:email] ==  'admin@test.com' }.id]
     @ids << current_user.id if current_user
   end
-
 end
