@@ -1,24 +1,7 @@
-# README
+# Coding Cheatsheets
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is the result of a two day hackathon. The goal was to create an one page application which shows cheatsheets with important code snippets and terminal commands for developers.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Screenshot
+---
+![Screenshot](screenshot_01.png)
